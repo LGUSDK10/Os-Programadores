@@ -1,0 +1,364 @@
+# Simulado de Programação I
+
+Baseado nos conteúdos dos slides e no perfil das atividades.
+
+---
+
+# Parte I — Questões Teóricas
+
+## 1.
+Explique a diferença entre variável e constante em Python.
+
+## 2.
+Por que em Python as constantes normalmente são escritas em letras maiúsculas?
+
+## 3.
+O que significa dizer que Python é uma linguagem interpretada e multiparadigma?
+
+## 4.
+Explique a diferença entre tupla e lista.
+
+## 5.
+O que é um índice em listas, tuplas e matrizes?
+
+## 6.
+O que acontece quando tentamos acessar um índice inexistente?
+
+## 7.
+Explique a diferença entre:
+
+```python
+=
+```
+
+e
+
+```python
+==
+```
+
+## 8.
+Descreva o funcionamento dos operadores:
+
+- `and`
+- `or`
+- `not`
+
+## 9.
+Qual a diferença entre:
+
+```python
+/
+```
+
+```python
+//
+```
+
+```python
+%
+```
+
+## 10.
+Explique quando o uso de `while` é mais indicado do que o uso de `for`.
+
+## 11.
+O que a função `input()` retorna por padrão?
+
+## 12.
+Por que normalmente usamos `int()` ou `float()` com `input()`?
+
+## 13.
+Explique o que é uma matriz em Python.
+
+## 14.
+O que significa dizer que uma matriz é uma lista de listas?
+
+## 15.
+Como acessar a segunda coluna da terceira linha de uma matriz?
+
+---
+
+# Parte II — Verdadeiro ou Falso
+
+## 16.
+( ) Uma tupla pode ter seus elementos alterados.
+
+## 17.
+( ) Uma lista permite adicionar e remover elementos.
+
+## 18.
+( ) `input()` sempre retorna string.
+
+## 19.
+( ) O operador `%` retorna o quociente da divisão.
+
+## 20.
+( ) `for i in range(5)` imprime números de 0 até 5.
+
+## 21.
+( ) Matrizes podem armazenar listas em seu interior.
+
+## 22.
+( ) `not(True)` resulta em `False`.
+
+## 23.
+( ) Uma lista deve obrigatoriamente ter apenas números.
+
+---
+
+# Parte III — Análise de Código
+
+## 24.
+O que será impresso?
+
+```python
+idade = input("Digite sua idade: ")
+print(idade * 2)
+```
+
+## 25.
+O que será impresso?
+
+```python
+for i in range(4):
+    print(i)
+```
+
+## 26.
+Qual será a saída?
+
+```python
+frutas = ["maçã", "banana", "uva"]
+
+for fruta in frutas:
+    print(fruta)
+```
+
+## 27.
+Explique o resultado:
+
+```python
+numero = 8
+
+if numero % 2 == 0:
+    print("Par")
+else:
+    print("Ímpar")
+```
+
+## 28.
+O que será exibido?
+
+```python
+matriz = [
+    ["Ana", "Carlos", "João"],
+    [15, 20, 18]
+]
+
+print(matriz[0][1])
+```
+
+---
+
+# Parte IV — Prática Curta
+
+## 29.
+Faça um programa que:
+
+- leia 5 números;
+- mostre quantos são pares.
+
+## 30.
+Faça um programa que:
+
+- peça 4 notas;
+- calcule a média;
+- informe se está aprovado, recuperação ou reprovado.
+
+## 31.
+Faça um programa que:
+
+- peça um número inteiro positivo;
+- mostre todos os números de 1 até ele.
+
+## 32.
+Faça um programa que:
+
+- leia 6 números;
+- some apenas os números ímpares.
+
+## 33.
+Crie uma lista com 5 nomes e use `for` para exibir um por linha.
+
+---
+
+# Parte V — Listas e Tuplas
+
+## 34.
+Crie uma tupla com 5 cidades.
+
+- Exiba a terceira cidade.
+
+## 35.
+Crie uma lista com 4 frutas.
+
+- Adicione mais uma fruta;
+- Remova uma fruta;
+- Exiba a lista final.
+
+## 36.
+Faça um programa que permita:
+
+- cadastrar 3 produtos em uma lista;
+- exibir todos os produtos no final.
+
+## 37.
+Crie uma lista de números.
+
+- Mostre o maior valor;
+- Mostre o menor valor.
+
+---
+
+# Parte VI — Matrizes
+
+## 38.
+Crie uma matriz com:
+
+- nomes de 3 alunos;
+- notas dos 3 alunos.
+
+Depois exiba a nota do segundo aluno.
+
+## 39.
+Faça um programa que percorra a matriz abaixo e imprima todos os valores:
+
+```python
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+```
+
+## 40.
+Explique a diferença entre:
+
+```python
+matriz[1]
+```
+
+e
+
+```python
+matriz[1][2]
+```
+
+---
+
+# Parte VII — Questões no Estilo das Atividades do Professor
+
+## 41. Controle de notas
+
+Crie um programa que:
+
+- pergunte quantas notas serão cadastradas;
+- valide cada nota (0 a 10);
+- calcule a média;
+- informe situação do aluno.
+
+## 42. Par, ímpar e soma
+
+Crie um programa que:
+
+- leia um número inteiro positivo `N`;
+- analise os números de 1 até `N`;
+- informe:
+  - quantidade de pares;
+  - quantidade de ímpares;
+  - soma dos pares.
+
+## 43. Inventário simples
+
+Crie um programa com menu:
+
+- adicionar item;
+- remover item;
+- mostrar inventário;
+- editar quantidade;
+- sair.
+
+Cada item deve ser armazenado assim:
+
+```python
+[nome, quantidade]
+```
+
+## 44. Sistema de missões
+
+Crie um programa com menu para:
+
+- adicionar missão;
+- remover missão;
+- concluir missão;
+- listar missões;
+- mostrar por dificuldade.
+
+Cada missão:
+
+```python
+[nome, dificuldade, status]
+```
+
+## 45. Controle de estoque (matriz)
+
+Crie um programa que:
+
+- cadastre produtos;
+- armazene em matriz;
+- classifique:
+  - estoque alto;
+  - estoque médio;
+  - estoque baixo;
+- exiba relatório final.
+
+---
+
+# Parte VIII — Desafio de Prova
+
+## 46.
+Crie um programa que simule uma pequena tabela de campeonato.
+
+Cada time deve possuir:
+
+- nome;
+- pontos;
+- jogos;
+- vitórias;
+- empates;
+- derrotas.
+
+O programa deve:
+
+- armazenar tudo em matriz;
+- permitir adicionar novo time;
+- retirar 10 pontos de times específicos usando `for` e `if`;
+- ordenar por pontos;
+- exibir posição final.
+
+---
+
+# Parte IX — Questões de Raciocínio
+
+## 47.
+Por que uma matriz é mais adequada que várias listas separadas em algumas situações?
+
+## 48.
+Por que validar entradas do usuário é importante?
+
+## 49.
+Em quais situações `for` é mais conveniente do que `while`?
+
+## 50.
+Dê um exemplo de problema do mundo real que pode ser resolvido com listas e matrizes.
