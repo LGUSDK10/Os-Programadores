@@ -154,5 +154,130 @@ for i in range(1):
         grupoA[i+3][7] += golsA
         grupoA[i+3][8] += golsB - golsA
 
-for i in tabela:
-    print(i)
+for i in range(3):
+    print(f"{grupoB[0][0]} X {grupoB[i+1][0]}")
+    golsA = int(input(f"Digite o número de gols marcados por {grupoB[0][0]}: "))
+    golsB = int(input(f"Digite o número de gols marcados por {grupoB[i+1][0]}: "))
+    print(f"{grupoB[0][0]} {golsA} X {golsB} {grupoB[i+1][0]}")
+    if golsA > golsB:
+        grupoB[0][1] += 3
+        grupoB[0][2] += 1
+        grupoB[0][3] += 1
+        grupoB[0][6] += golsA
+        grupoB[0][7] += golsB
+        grupoB[0][8] += golsA - golsB
+        grupoB[i+1][2] += 1
+        grupoB[i+1][5] += 1
+        grupoB[i+1][6] += golsB
+        grupoB[i+1][7] += golsA
+        grupoB[i+1][8] += golsB - golsA
+    elif golsA < golsB:
+        grupoB[i+1][1] += 3
+        grupoB[i+1][2] += 1
+        grupoB[i+1][3] += 1
+        grupoB[i+1][6] += golsB
+        grupoB[i+1][7] += golsA
+        grupoB[i+1][8] += golsB - golsA
+        grupoB[0][2] += 1
+        grupoB[0][5] += 1
+        grupoB[0][6] += golsA
+        grupoB[0][7] += golsB
+        grupoB[0][8] += golsA - golsB
+    else:
+        grupoB[0][1] += 1
+        grupoB[0][2] += 1
+        grupoB[0][6] += golsA
+        grupoB[0][7] += golsB
+        grupoB[0][8] += golsA - golsB
+
+        grupoB[i+1][1] += 1
+        grupoB[i+1][2] += 1
+        grupoB[i+1][6] += golsB
+        grupoB[i+1][7] += golsA
+        grupoB[i+1][8] += golsB - golsA
+
+for i in range(2):
+    print(f"{grupoB[1][0]} X {grupoB[i+2][0]}")
+    golsA = int(input(f"Digite o número de gols marcados por {grupoB[1][0]}: "))
+    golsB = int(input(f"Digite o número de gols marcados por {grupoB[i+2][0]}: "))
+    print(f"{grupoB[1][0]} {golsA} X {golsB} {grupoB[i+2][0]}")
+
+    if golsA > golsB:
+        grupoB[1][1] += 3
+        grupoB[1][2] += 1
+        grupoB[1][3] += 1
+        grupoB[1][6] += golsA
+        grupoB[1][7] += golsB
+        grupoB[1][8] += golsA - golsB
+        grupoB[i+2][2] += 1
+        grupoB[i+2][5] += 1
+        grupoB[i+2][6] += golsB
+        grupoB[i+2][7] += golsA
+        grupoB[i+2][8] += golsB - golsA
+    elif golsA < golsB:
+        grupoB[i+2][1] += 3
+        grupoB[i+2][2] += 1
+        grupoB[i+2][3] += 1
+        grupoB[i+2][6] += golsB
+        grupoB[i+2][7] += golsA
+        grupoB[i+2][8] += golsB - golsA
+        grupoB[1][2] += 1
+        grupoB[1][5] += 1
+        grupoB[1][6] += golsA
+        grupoB[1][7] += golsB
+        grupoB[1][8] += golsA - golsB
+    else:
+        grupoB[1][1] += 1
+        grupoB[1][2] += 1
+        grupoB[1][6] += golsA
+        grupoB[1][7] += golsB
+        grupoB[1][8] += golsA - golsB
+
+        grupoB[i+2][1] += 1
+        grupoB[i+2][2] += 1
+        grupoB[i+2][6] += golsB
+        grupoB[i+2][7] += golsA
+        grupoB[i+2][8] += golsB - golsA
+
+for i in range(1):
+    print(f"{grupoB[2][0]} X {grupoB[i+3][0]}")
+    golsA = int(input(f"Digite o número de gols marcados por {grupoB[2][0]}: "))
+    golsB = int(input(f"Digite o número de gols marcados por {grupoB[i+3][0]}: "))
+    print(f"{grupoB[2][0]} {golsA} X {golsB} {grupoB[i+3][0]}")
+
+    if golsA > golsB:
+        grupoB[2][1] += 3
+        grupoB[2][2] += 1
+        grupoB[2][3] += 1
+        grupoB[2][6] += golsA
+        grupoB[2][7] += golsB
+        grupoB[2][8] += golsA - golsB
+        grupoB[i+3][2] += 1
+        grupoB[i+3][5] += 1
+        grupoB[i+3][6] += golsB
+        grupoB[i+3][7] += golsA
+        grupoB[i+3][8] += golsB - golsA
+    elif golsA < golsB:
+        grupoB[i+3][1] += 3
+        grupoB[i+3][2] += 1
+        grupoB[i+3][3] += 1
+        grupoB[i+3][6] += golsB
+        grupoB[i+3][7] += golsA
+        grupoB[i+3][8] += golsB - golsA
+        grupoB[2][2] += 1
+        grupoB[2][5] += 1
+        grupoB[2][6] += golsA
+        grupoB[2][7] += golsB
+        grupoB[2][8] += golsA - golsB
+    else:
+        grupoB[2][1] += 1
+        grupoB[2][2] += 1
+        grupoB[2][6] += golsA
+        grupoB[2][7] += golsB
+        grupoB[2][8] += golsA - golsB
+
+        grupoB[i+3][1] += 1
+        grupoB[i+3][2] += 1
+        grupoB[i+3][6] += golsB
+        grupoB[i+3][7] += golsA
+        grupoB[i+3][8] += golsB - golsA
