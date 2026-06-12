@@ -1,5 +1,6 @@
 grupoA = []
 grupoB = []
+semi = []
 
 for i in range(4):
     selecao = input("Digite o nome da seleção do grupo A: ")
@@ -25,6 +26,9 @@ tabela = [
     [grupoB[2]],
     [grupoB[3]]
 ]
+
+print("========================================")
+print("Confronto do Grupo A:")
 
 for i in range(3):
     print(f"{grupoA[0][0]} X {grupoA[i+1][0]}")
@@ -67,6 +71,7 @@ for i in range(3):
         grupoA[i+1][6] += golsB
         grupoA[i+1][7] += golsA
         grupoA[i+1][8] += golsB - golsA
+print()
 
 for i in range(2):
     print(f"{grupoA[1][0]} X {grupoA[i+2][0]}")
@@ -110,6 +115,7 @@ for i in range(2):
         grupoA[i+2][6] += golsB
         grupoA[i+2][7] += golsA
         grupoA[i+2][8] += golsB - golsA
+print()
 
 for i in range(1):
     print(f"{grupoA[2][0]} X {grupoA[i+3][0]}")
@@ -153,6 +159,10 @@ for i in range(1):
         grupoA[i+3][6] += golsB
         grupoA[i+3][7] += golsA
         grupoA[i+3][8] += golsB - golsA
+print()
+
+print("========================================")
+print("Confronto do Grupo B:")
 
 for i in range(3):
     print(f"{grupoB[0][0]} X {grupoB[i+1][0]}")
@@ -195,6 +205,7 @@ for i in range(3):
         grupoB[i+1][6] += golsB
         grupoB[i+1][7] += golsA
         grupoB[i+1][8] += golsB - golsA
+print()
 
 for i in range(2):
     print(f"{grupoB[1][0]} X {grupoB[i+2][0]}")
@@ -238,6 +249,7 @@ for i in range(2):
         grupoB[i+2][6] += golsB
         grupoB[i+2][7] += golsA
         grupoB[i+2][8] += golsB - golsA
+print()
 
 for i in range(1):
     print(f"{grupoB[2][0]} X {grupoB[i+3][0]}")
@@ -281,3 +293,81 @@ for i in range(1):
         grupoB[i+3][6] += golsB
         grupoB[i+3][7] += golsA
         grupoB[i+3][8] += golsB - golsA
+print()
+
+
+
+grupoA_ord = sorted(grupoA, key=lambda row: row[1], reverse=True)
+grupoB_ord = sorted(grupoB, key=lambda row: row[1], reverse=True)
+
+print("========================================")
+print("Classificação do Grupo A:")
+for i in grupoA_ord:
+    print(i)
+print()
+print("Classificação do Grupo B:")
+for i in grupoB_ord:
+    print(i)
+print()
+
+print("========================================")
+print("Confronto das Semifinais:")
+print(f"{grupoA_ord[0][0]} X {grupoB_ord[1][0]}")
+print(f"{grupoB_ord[0][0]} X {grupoA_ord[1][0]}")
+
+print("Quer simular as Semifinais? (s/n)")
+r = input()
+
+if r == "s":
+    print("Semi lado 1: ")
+    print(f"{grupoA_ord[0][0]} X {grupoB_ord[1][0]}")
+    golsA = int(input(f"Digite o número de gols marcados por {grupoA_ord[0][0]}: "))
+    golsB = int(input(f"Digite o número de gols marcados por {grupoB_ord[1][0]}: "))
+    print(f"{grupoA_ord[0][0]} {golsA} X {golsB} {grupoB_ord[1][0]}")
+    if golsA > golsB:
+        semi.append(grupoA_ord[0][0])
+    elif golsA < golsB:
+        semi.append(grupoB_ord[1][0])
+    else:
+        print("Empate? Vamos para os pênaltis!")
+        r = input(f"Quem venceu nos pênaltis? ({grupoA_ord[0][0]}/{grupoB_ord[1][0]}): ")
+        if r == grupoA_ord[0][0]:
+            semi.append(grupoA_ord[0][0])
+        else:
+            semi.append(grupoB_ord[1][0])
+    print()
+    print("Semi lado 2: ")
+    print(f"{grupoB_ord[0][0]} X {grupoA_ord[1][0]}")
+    golsA = int(input(f"Digite o número de gols marcados por {grupoB_ord[0][0]}: "))
+    golsB = int(input(f"Digite o número de gols marcados por {grupoA_ord[1][0]}: "))
+    print(f"{grupoB_ord[0][0]} {golsA} X {golsB} {grupoA_ord[1][0]}")
+    if golsA > golsB:
+        semi.append(grupoB_ord[0][0])
+    elif golsA < golsB:
+        semi.append(grupoA_ord[1][0])
+    else:
+        print("Empate? Vamos para os pênaltis!")
+        r = input(f"Quem venceu nos pênaltis? ({grupoB_ord[0][0]}/{grupoA_ord[1][0]}): ")
+        if r == grupoB_ord[0][0]:
+            semi.append(grupoB_ord[0][0])
+        else:
+            semi.append(grupoA_ord[1][0])
+    print()
+
+    print("========================================")
+    print("Confronto da Final:")
+    print(f"{semi[0]} X {semi[1]}")
+    golsA = int(input(f"Digite o número de gols marcados por {semi[0]}: "))
+    golsB = int(input(f"Digite o número de gols marcados por {semi[1]}: "))
+    print(f"{semi[0]} {golsA} X {golsB} {semi[1]}")
+    if golsA > golsB:
+        print(f"O campeão é {semi[0]}!")
+    elif golsA < golsB:
+        print(f"O campeão é {semi[1]}!")
+    else:
+        print("Empate? Vamos para os pênaltis!")
+        r = input(f"Quem venceu nos pênaltis? ({semi[0]}/{semi[1]}): ")
+        if r == semi[0]:
+            print(f"O campeão é {semi[0]}!")
+        else:
+            print(f"O campeão é {semi[1]}!")
