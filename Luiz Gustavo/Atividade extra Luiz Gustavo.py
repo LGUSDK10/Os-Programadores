@@ -1,6 +1,8 @@
 grupoA = []
 grupoB = []
 semi = []
+campeao = ""
+vice = ""
 
 for i in range(4):
     selecao = input("Digite o nome da seleção do grupo A: ")
@@ -62,12 +64,14 @@ for i in range(3):
     else:
         grupoA[0][1] += 1
         grupoA[0][2] += 1
+        grupoA[0][4] += 1
         grupoA[0][6] += golsA
         grupoA[0][7] += golsB
         grupoA[0][8] += golsA - golsB
 
         grupoA[i+1][1] += 1
         grupoA[i+1][2] += 1
+        grupoA[i+1][4] += 1
         grupoA[i+1][6] += golsB
         grupoA[i+1][7] += golsA
         grupoA[i+1][8] += golsB - golsA
@@ -106,12 +110,14 @@ for i in range(2):
     else:
         grupoA[1][1] += 1
         grupoA[1][2] += 1
+        grupoA[1][4] += 1
         grupoA[1][6] += golsA
         grupoA[1][7] += golsB
         grupoA[1][8] += golsA - golsB
 
         grupoA[i+2][1] += 1
         grupoA[i+2][2] += 1
+        grupoA[i+2][4] += 1
         grupoA[i+2][6] += golsB
         grupoA[i+2][7] += golsA
         grupoA[i+2][8] += golsB - golsA
@@ -150,12 +156,14 @@ for i in range(1):
     else:
         grupoA[2][1] += 1
         grupoA[2][2] += 1
+        grupoA[2][4] += 1
         grupoA[2][6] += golsA
         grupoA[2][7] += golsB
         grupoA[2][8] += golsA - golsB
 
         grupoA[i+3][1] += 1
         grupoA[i+3][2] += 1
+        grupoA[i+3][4] += 1
         grupoA[i+3][6] += golsB
         grupoA[i+3][7] += golsA
         grupoA[i+3][8] += golsB - golsA
@@ -196,12 +204,14 @@ for i in range(3):
     else:
         grupoB[0][1] += 1
         grupoB[0][2] += 1
+        grupoB[0][4] += 1
         grupoB[0][6] += golsA
         grupoB[0][7] += golsB
         grupoB[0][8] += golsA - golsB
 
         grupoB[i+1][1] += 1
         grupoB[i+1][2] += 1
+        grupoB[i+1][4] += 1
         grupoB[i+1][6] += golsB
         grupoB[i+1][7] += golsA
         grupoB[i+1][8] += golsB - golsA
@@ -240,12 +250,14 @@ for i in range(2):
     else:
         grupoB[1][1] += 1
         grupoB[1][2] += 1
+        grupoB[1][4] += 1
         grupoB[1][6] += golsA
         grupoB[1][7] += golsB
         grupoB[1][8] += golsA - golsB
 
         grupoB[i+2][1] += 1
         grupoB[i+2][2] += 1
+        grupoB[i+2][4] += 1
         grupoB[i+2][6] += golsB
         grupoB[i+2][7] += golsA
         grupoB[i+2][8] += golsB - golsA
@@ -284,12 +296,14 @@ for i in range(1):
     else:
         grupoB[2][1] += 1
         grupoB[2][2] += 1
+        grupoB[2][4] += 1
         grupoB[2][6] += golsA
         grupoB[2][7] += golsB
         grupoB[2][8] += golsA - golsB
 
         grupoB[i+3][1] += 1
         grupoB[i+3][2] += 1
+        grupoB[i+3][4] += 1
         grupoB[i+3][6] += golsB
         grupoB[i+3][7] += golsA
         grupoB[i+3][8] += golsB - golsA
@@ -297,8 +311,8 @@ print()
 
 
 
-grupoA_ord = sorted(grupoA, key=lambda row: row[1], reverse=True)
-grupoB_ord = sorted(grupoB, key=lambda row: row[1], reverse=True)
+grupoA_ord = sorted(grupoA, key=lambda row: (row[1], row[8], row[6], row[7]), reverse=True)
+grupoB_ord = sorted(grupoB, key=lambda row: (row[1], row[8], row[6], row[7]), reverse=True)
 
 print("========================================")
 print("Classificação do Grupo A:")
@@ -362,12 +376,35 @@ if r == "s":
     print(f"{semi[0]} {golsA} X {golsB} {semi[1]}")
     if golsA > golsB:
         print(f"O campeão é {semi[0]}!")
+        campeao = semi[0]
+        vice = semi[1]
     elif golsA < golsB:
         print(f"O campeão é {semi[1]}!")
+        campeao = semi[1]
+        vice = semi[0]
     else:
         print("Empate? Vamos para os pênaltis!")
         r = input(f"Quem venceu nos pênaltis? ({semi[0]}/{semi[1]}): ")
         if r == semi[0]:
             print(f"O campeão é {semi[0]}!")
+            campeao = semi[0]
+            vice = semi[1]
         else:
             print(f"O campeão é {semi[1]}!")
+            campeao = semi[1]
+            vice = semi[0]
+    print("========================================")
+    print("Resultado final da competição:")
+    print("Semifinal 1:")
+    print(f"{grupoA_ord[0][0]} X {grupoB_ord[1][0]} - Vencedor: {semi[0]}")
+    print("Semifinal 2:")
+    print(f"{grupoB_ord[0][0]} X {grupoA_ord[1][0]} - Vencedor: {semi[1]}")
+    print()
+
+    print("Final:")
+    print(f"{semi[0]} X {semi[1]}")
+    print(f"Campeão: {campeao}")
+    print(f"Vice-campeão: {vice}")
+
+elif r != "s":
+    print("Semifinais não simuladas. Resultado final da competição não disponível.")
