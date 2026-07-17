@@ -69,7 +69,7 @@ while True:
         if qtd == 0:
             print("Livro não encontrado.")
 
-    if r == 5:
+    elif r == 5:
         nome = input("Digite o nome do livro: ")
         with open("livros.txt", "r", encoding="utf-8") as arquivo:
             linhas = arquivo.readlines()
@@ -81,7 +81,6 @@ while True:
 
                 if dados[0] == nome:
                     qtd += 1
-
                     if dados[2].strip() == "Emprestado":
                         arquivo.write(dados[0] + ";" + dados[1] + ";Disponível\n")
                         print("Livro devolvido!")
