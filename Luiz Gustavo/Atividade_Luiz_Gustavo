@@ -1,0 +1,8 @@
+with open ("aluno_notas.txt", "r", encoding="utf-8") as arquivo:
+    notas = arquivo.readlines()
+matriz = []
+for i in notas:
+    aluno = i.split(" ")
+    matriz.remove(\n)
+    matriz.append(aluno)
+print(matriz)
