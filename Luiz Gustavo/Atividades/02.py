@@ -4,10 +4,10 @@ def analise_estatistica(dados: list) -> tuple:
   """
   Função que recebe uma lista de números e retorna a média, mediana, moda e desvio padrão.
   
-  Parâmetros:
+  Args:
     dados (list): Uma lista de números.
 
-  Retorna:
+  Returns:
     tuple: Uma tupla contendo a média, mediana, moda e desvio padrão.
   """
 
